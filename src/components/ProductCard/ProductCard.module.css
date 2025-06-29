@@ -1,0 +1,93 @@
+.card{
+    width: 323px;
+    background: #FFF;
+    box-shadow: 18.214px 18.214px 36.429px 0px rgba(211, 209, 216, 0.25);
+    border-radius: 20px;
+    height: 247px;
+}
+
+.head{
+    border-radius: 20px;
+    position: relative;
+    min-height: 165px;
+}
+
+.price{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border-radius: 20px;
+    background: white;
+    padding: 3px 10px;
+    color: var(--text-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.currency{
+    color: var(--primary-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rating{
+    position: absolute;
+    bottom: -12px;
+    left: 15px;
+    border-radius: 20px;
+    background: white;
+    padding: 5px;
+    color: var(--text-color);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.add-to-cart{
+    width: 34px;
+    height: 34px;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.add-to-cart:hover{
+    background: var(--primary-hover-color);
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.title{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--text-color);
+    padding: 20px 20px 5px 20px;
+}
+
+.description{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--text-secondary-color);
+    padding: 0px 20px 30px 20px;
+}
+
+.link{
+    text-decoration: none;
+}

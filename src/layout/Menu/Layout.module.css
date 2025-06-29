@@ -75,5 +75,6 @@
 }
 
 .content{
-    padding: 60px;
+    padding: 40px 60px;
+    width: 100%;
 }
