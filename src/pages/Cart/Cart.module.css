@@ -4,14 +4,12 @@
 }
 
 .line {
-	max-width: 512px;
 	display: flex;
 	justify-content: space-between;
 	padding: 17px 0;
 }
 
 .hr {
-	max-width: 512px;
 	margin: 0;
 	border: 1px solid #F1F2F3;
 }
@@ -45,7 +43,6 @@
 }
 
 .checkout {
-	max-width: 512px;
 	display: flex;
 	align-items: center;
 	justify-content: center;

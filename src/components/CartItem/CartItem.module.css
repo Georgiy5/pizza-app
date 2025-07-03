@@ -2,7 +2,7 @@
 .item {
 	display: flex;
 	gap: 20px;
-	max-width: 512px;
+	/* max-width: px; */
 	margin-bottom: 27px;
 }
 
