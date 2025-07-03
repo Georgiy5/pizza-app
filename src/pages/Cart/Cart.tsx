@@ -65,6 +65,7 @@ export function Cart() {
 			}
 			return <CartItem key={product.id} count={i.count} {...product} />;
 		})}
+		
 		<div className={styles['line']}>
 			<div className={styles['text']}>Итог</div>
 			<div className={styles['price']}>{total}&nbsp;<span>₽</span></div>
@@ -82,5 +83,6 @@ export function Cart() {
 		<div className={styles['checkout']}>
 			<Button appearance="big" onClick={checkout}>оформить</Button>
 		</div>
+				
 	</>;
 }

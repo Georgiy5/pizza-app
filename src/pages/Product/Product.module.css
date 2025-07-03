@@ -1,0 +1,87 @@
+.content {
+    display: flex;
+    width: 660px;
+    height: 248px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.img {
+    border-radius: 10px;
+}
+
+.description {
+    margin-left: 50px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F1F2F3;;
+}
+
+.currency{
+    color: var(--primary-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rating{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: center;
+
+}
+
+.cloud{
+    border-radius: 20px;
+    background: #fff;
+    padding: 5px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-shadow: 0px 6.071px 24.286px 0px rgba(254, 114, 76, 0.20);
+}
+
+.ingredients{
+    margin-top: 35px;
+}
+
+.button{
+    width: 70px;
+    height: 70px;
+    background: none;
+    border: none;
+}
+
+.buttonImg{
+    width: 70px;
+    height: 70px;
+}
+
+.header{
+    display: flex;
+}
+
+.title{
+    display: flex;
+    align-items: top;
+    padding-top: 5px;
+}
