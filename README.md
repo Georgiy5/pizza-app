@@ -1,54 +1,114 @@
-# React + TypeScript + Vite
+# Pizza App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для заказа пиццы на React + TypeScript.
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Приложение реализует базовый пользовательский сценарий сервиса доставки:
 
-## Expanding the ESLint configuration
+- регистрация и вход;
+- просмотр меню и фильтрация по названию;
+- просмотр карточки продукта;
+- добавление/удаление позиций в корзине;
+- оформление заказа;
+- сохранение корзины и токена авторизации в localStorage.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Внешний API: https://purpleschool.ru/pizza-api-demo
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Технологии
+
+- React 19
+- TypeScript
+- Vite
+- React Router (data loader для страницы продукта)
+- Redux Toolkit + React Redux
+- Axios
+- CSS Modules
+
+## Основные маршруты
+
+- /auth/login - вход
+- /auth/register - регистрация
+- / - меню (защищенный маршрут)
+- /product/:id - страница товара
+- /cart - корзина
+- /success - успешное оформление заказа
+
+Защита маршрутов реализована через компонент RequireAuth: при отсутствии JWT пользователь перенаправляется на страницу входа.
+
+## Хранилище
+
+Используется Redux Store с двумя слайсами:
+
+- user: JWT, профиль пользователя, ошибки авторизации/регистрации
+- cart: позиции корзины и количество
+
+Persist в localStorage:
+
+- userData - JWT
+- cartData - корзина
+
+## Установка и запуск
+
+Требования:
+
+- Node.js 18+
+- npm 9+
+
+Установка зависимостей:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Запуск dev-сервера:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+Сборка production-версии:
+
+```bash
+npm run build
+```
+
+Проверка линтером:
+
+```bash
+npm run lint
+```
+
+Локальный предпросмотр production-сборки:
+
+```bash
+npm run preview
+```
+
+## Структура проекта
+
+```text
+src/
+  components/      // переиспользуемые UI-компоненты
+  helpers/         // API-константы и вспомогательные обертки
+  interfaces/      // типы и интерфейсы
+  layout/          // layout для auth и основной части приложения
+  pages/           // страницы (Menu, Product, Cart, Login, Register, Success)
+  store/           // Redux store и слайсы
+```
+
+## API, используемое приложением
+
+- POST /auth/login
+- POST /auth/register
+- GET /user/profile
+- GET /products
+- GET /products/:id
+- POST /order
+
+## Что можно улучшить
+
+- добавить обработку ошибок checkout и глобальные уведомления;
+- покрыть ключевые сценарии тестами;
+- вынести базовый URL API в переменные окружения;
+- добавить CI-проверки (lint + build).
